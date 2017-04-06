@@ -1,0 +1,35 @@
+name:                beam-firebird
+version:             0.1.0.0
+synopsis:            Connection layer between beam and firebird
+description:
+homepage:            https://github.com/githubuser/beam-firebird#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2017 Author name here
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  exposed-modules:    Database.Beam.Firebird.Types
+                      Database.Beam.Firebird.Syntax
+                      Database.Beam.Firebird.Connection
+  other-modules:      Database.Beam.Firebird.FromRow
+                      Database.Beam.Firebird.Internal
+                      Database.Beam.Firebird.Ok
+                      Database.Beam.Firebird.ToRow
+
+  build-depends:      base >= 4.7 && < 5, beam-core >=0.5.0.0, beam-migrate, transformers,
+                      text, bytestring, time, dlist, mtl, free, Decimal, convertible, HDBC >=2.4, HDBC-odbc >=2.5, conduit
+  default-language:   Haskell2010
+  default-extensions: ScopedTypeVariables, OverloadedStrings, MultiParamTypeClasses, RankNTypes, FlexibleInstances,
+                      DeriveDataTypeable, DeriveGeneric, StandaloneDeriving, TypeFamilies, GADTs, OverloadedStrings,
+                      CPP, TypeApplications, FlexibleContexts
+
+source-repository head
+  type: git
+  location: https://github.com/tathougies/beam.git
+  subdir: beam-firebird
